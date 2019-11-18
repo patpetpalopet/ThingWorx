@@ -26,8 +26,10 @@ var header = {
   "Content-Type": "application/json",
   appkey: "66f02084-5242-4b7d-8e64-7f046353ecac"
 };
-app.post("/calculette", function(req, res) {
-
+app.get("/calculette", function(req, res) {
+    res.json({
+        error: "error"
+      });
 });
 app.get("/GetBreakTime", async function(req, res) {
   var options = {
