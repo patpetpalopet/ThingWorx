@@ -26,7 +26,7 @@ var header = {
   "Content-Type": "application/json",
   appkey: "66f02084-5242-4b7d-8e64-7f046353ecac"
 };
-app.get("/calculette", function(req, res) {
+app.get("/", function(req, res) {
     res.json({
         error: "error"
       });
