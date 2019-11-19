@@ -9,14 +9,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 // set Origin
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Content-Type, X-access-token");
-//   res.header("Access-Control-Allow-Headers", "Content-Type, application/json");
-//   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
-//   res.header("Access-Control-Allow-Credentials", true);
-//   next();
-// });
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type, X-access-token");
+  res.header("Access-Control-Allow-Headers", "Content-Type, application/json");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
 
 var url = "http://96.30.77.157:550/Thingworx/";
 // var url = "http://10.41.55.2:550/Thingworx/";
@@ -83,6 +83,7 @@ app.get("/GetBreakTime", async function(req, res) {
     }
   });
 });
-app.listen(3000, function() {
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
   console.log("Start server at port 3000.");
 });
