@@ -32,6 +32,7 @@ app.get("/", (req, res) => {
       });
 });
 app.post("/calculate", (req, res) => {
+  sendLog(text);
   res.json({
       error: "error"
     });
@@ -88,6 +89,29 @@ app.get("/GetBreakTime", async (req, res)  =>  {
     }
   });
 });
+
+function sendLog(text) {
+  request({
+      method: 'POST',
+      uri: 'https://notify-api.line.me/api/notify',
+      header: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      auth: {
+          // bearer: 'bocXxg3buRE1Zmry34RedGFRh6DTD2U5omO4aKPBlGM',
+          bearer: 'xrzR8tzdmn8vklmFQQ9Lzf0NztNnX4Yycya6wmd1QWk',
+      },
+      form: {
+          message: text, //ข้อความที่จะส่ง
+      },
+  }, (err, httpResponse, body) => {
+      if (err) {
+          console.log(err);
+      } else {
+          console.log(body);
+      }
+  });
+}
 var port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log('Server running at http://localhost:' + port);
