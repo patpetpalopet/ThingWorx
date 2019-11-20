@@ -29,7 +29,7 @@ var header = {
 app.get("/", function(req, res) {
     res.json({
         error: "error"
-      })
+      });
 });
 app.get("/GetBreakTime", async function(req, res) {
   var options = {
@@ -84,6 +84,6 @@ app.get("/GetBreakTime", async function(req, res) {
   });
 });
 var port = process.env.PORT || 8080;
-app.listen(port, function() {
-  console.log("Start server at port 8080.");
+app.listen(port, () => {
+    console.log('Server running at http://localhost:' + port);
 });
