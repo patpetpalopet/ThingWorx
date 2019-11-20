@@ -32,7 +32,6 @@ app.get("/", (req, res) => {
       });
 });
 app.post("/calculate", (req, res) => {
-  sendLog("rvtweyvw4egfcegrvycwetrwrcwe");
   res.json({
       error: "error"
     });
