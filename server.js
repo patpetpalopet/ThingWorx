@@ -34,10 +34,7 @@ app.get("/", (req, res) => {
 });
 app.post("/calculate", (req, res) => {
   sendLog(JSON.stringify(req.body));
-  // console.log(req.body);
-  res.json({
-    "statusCode": 200
-    });
+  res.json(req.body);
 });
 app.get("/GetBreakTime", async (req, res)  =>  {
   var options = {
