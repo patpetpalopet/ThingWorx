@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 app.post("/calculate", (req, res) => {
   res.json({
-      error: "error"
+    "statusCode": 200
     });
 });
 app.get("/GetBreakTime", async (req, res)  =>  {
