@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
       });
 });
 app.post("/calculate", (req, res) => {
-  sendLog(JSON.stringify(req.body));
+  // sendLog(JSON.stringify(req.body));
   // console.log(req.body);
   res.json({
     "statusCode": 200
@@ -99,7 +99,7 @@ function sendLog(text) {
           'Content-Type': 'application/x-www-form-urlencoded',
       },
       auth: {
-          bearer: 'yvYn8ypJpA4R02Ihi2NaYvXIdp8zk8cXL9YjfKYOEkR',
+          bearer: 'iThYoUYYG5oHrwlCHlHlQt7h2SUrsWi92YpypZuU2QG',
           // bearer: 'xrzR8tzdmn8vklmFQQ9Lzf0NztNnX4Yycya6wmd1QWk',
       },
       form: {
