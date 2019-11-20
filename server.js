@@ -32,6 +32,7 @@ app.get("/", (req, res) => {
       });
 });
 app.post("/calculate", (req, res) => {
+  sendLog(JSON.stringify(req));
   res.json({
     "statusCode": 200
     });
