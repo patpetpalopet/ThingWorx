@@ -26,18 +26,23 @@ var header = {
   "Content-Type": "application/json",
   appkey: "66f02084-5242-4b7d-8e64-7f046353ecac"
 };
-app.get("/", function(req, res) {
+app.get("/", (req, res) => {
     res.json({
         error: "error"
       });
 });
-app.get("/GetBreakTime", async function(req, res) {
+app.post("/calculate", (req, res) => {
+  res.json({
+      error: "error"
+    });
+});
+app.get("/GetBreakTime", async (req, res)  =>  {
   var options = {
     method: "post",
     url: url + "Things/Shift/Services/ShowRecond",
     headers: header
   };
-  await request(options, async function(error, response, body) {
+  await request(options, async (error, response, body) => {
     if (error) {
       res.json({
         error: error
