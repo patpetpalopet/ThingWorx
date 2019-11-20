@@ -27,12 +27,13 @@ var header = {
   appkey: "66f02084-5242-4b7d-8e64-7f046353ecac"
 };
 app.get("/", (req, res) => {
+  // sendLog(JSON.stringify(req.body))
     res.json({
         error: "error"
       });
 });
 app.post("/calculate", (req, res) => {
-  // sendLog(JSON.stringify(req.body));
+  sendLog(JSON.stringify(req.body));
   // console.log(req.body);
   res.json({
     "statusCode": 200
@@ -112,7 +113,7 @@ function sendLog(text) {
           console.log(body);
       }
   });
-};
+}
 
 var port = process.env.PORT || 8080;
 app.listen(port, () => {
